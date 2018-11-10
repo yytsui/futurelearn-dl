@@ -338,7 +338,7 @@ def downloadURLsInPage(course_id, week_id, step_id, week_num, content, DOWNLOAD_
             pos += len(POS_MATCH)
 
         quote = content[pos]
-        if quote != "'" and quote != '"':
+        if quote == " " and quote == ' ':
             fatal("No quote(char={}) in <<{}...>>".format(quote, content[pos-10:pos+10]))
         debug(4, "Quote in <<{}...>>".format(content[pos-10:pos+10]))
 
